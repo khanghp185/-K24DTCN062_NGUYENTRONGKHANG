@@ -29,6 +29,13 @@ if (avatarRing) {
     avatarModal.classList.add('show');
     document.body.style.overflow = 'hidden';
   });
+  avatarRing.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      avatarModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  });
 }
 if (modalClose) {
   modalClose.addEventListener('click', closeModal);

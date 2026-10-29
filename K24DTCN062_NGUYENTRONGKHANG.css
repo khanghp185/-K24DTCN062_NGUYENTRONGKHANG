@@ -485,6 +485,8 @@ footer strong { color: var(--primary); }
 }
 .modal-box img, .modal-box .modal-placeholder {
   width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
   border-radius: 20px;
   border: 3px solid var(--primary);
   box-shadow: 0 20px 60px rgba(108,99,255,0.4);
