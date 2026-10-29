@@ -11,7 +11,7 @@
 * **Mã sinh viên:** K24DTCN062
 * **Họ và tên:** Nguyễn Trọng Khang
 * **Lớp:** D24TXCN02-K
-* **Giáo viên giảng dạy:** [Điền tên Giảng viên phụ trách]
+* **Giáo viên giảng dạy:** *(Điền tên Giảng viên phụ trách)*
 
 ---
 
@@ -27,16 +27,20 @@
 
 2. **Khởi tạo thư mục và tài nguyên dự án:**
    * Thư mục dự án: `K24DTCN062_NGUYENTRONGKHANG`
+   * Chuẩn bị ảnh đại diện cá nhân (`IMG_5791.JPG`) đặt trong thư mục `image/`.
    * Cấu trúc thư mục và tệp tin:
+
      ```text
      K24DTCN062_NGUYENTRONGKHANG/
      │
-     ├── K24DTCN062_NGUYENTRONGKHANG.html   # Tệp cấu trúc nội dung HTML chính
-     ├── K24DTCN062_NGUYENTRONGKHANG.css    # Tệp định dạng giao diện & hiệu ứng CSS
-     ├── K24DTCN062_NGUYENTRONGKHANG.js     # Tệp xử lý kịch bản tương tác JavaScript
+     ├── K24DTCN062_NGUYENTRONGKHANG.html      # Tệp cấu trúc nội dung HTML chính
+     ├── K24DTCN062_NGUYENTRONGKHANG.css       # Tệp định dạng giao diện & hiệu ứng CSS
+     ├── K24DTCN062_NGUYENTRONGKHANG.js        # Tệp xử lý kịch bản tương tác JavaScript
      ├── K24DTCN062_NGUYENTRONGKHANG_BAOCAO.md # Tệp báo cáo chi tiết định dạng Markdown
-     ├── vercel.json                        # Tệp cấu hình triển khai Vercel
-     └── README.md                          # Giới thiệu dự án
+     ├── image/
+     │   └── IMG_5791.JPG                      # Ảnh đại diện cá nhân
+     ├── vercel.json                            # Tệp cấu hình triển khai Vercel
+     └── README.md                              # Giới thiệu dự án
      ```
 
 ---
@@ -47,72 +51,82 @@ Trang web được tổ chức theo chuẩn **HTML5 Semantic**, chia rõ ràng t
 
 1. **Thẻ `<head>`:**
    * Khai báo chuẩn ký tự UTF-8, cấu hình thẻ viewport cho thiết kế Responsive.
-   * Thẻ `<title>` và `<meta name="description">` thể hiện thông tin sinh viên và trường.
+   * Thẻ `<title>` (`Nguyễn Trọng Khang | K24DTCN062 – PTIT`) và `<meta name="description">` thể hiện thông tin sinh viên và trường.
    * Liên kết tệp CSS độc lập và font chữ Google Fonts (*Inter*, *Outfit*).
+   * Favicon tab trình duyệt sử dụng ảnh đại diện thực tế: `<link rel="icon" type="image/jpeg" href="image/IMG_5791.JPG" />`.
 
 2. **Khối Header (`<header>`):**
-   * Chứa Logo nhận diện cá nhân cách điệu kết hợp tên viện đào tạo: `<div class="logo-icon">NK</div>` và `<div class="logo-text"><span>PTIT</span> – Portfolio</div>`.
-   * Vùng hiển thị đồng hồ kỹ thuật số theo thời gian thực: `<div id="clock">🕐 --:--:--</div>`.
+   * Logo nhận diện cá nhân cách điệu: `<div class="logo-icon">NK</div>` kết hợp `<div class="logo-text"><span>PTIT</span> – Portfolio</div>`, có hiệu ứng xoay nhẹ khi hover.
+   * Đồng hồ kỹ thuật số theo thời gian thực (cập nhật mỗi giây): `<div id="clock">🕐 --:--:--</div>`.
 
 3. **Khối Hero / Profile (`<section class="hero">`):**
-   * **Ảnh đại diện (Avatar):** Khung chứa ảnh tròn có viền gradient phát sáng, hỗ trợ sự kiện phóng to khi nhấp chuột (`role="button"`, `tabindex="0"`).
-   * **Thông tin tóm tắt:** Badge "🎓 Sinh viên PTIT", Họ tên lớn (h1), Mã sinh viên, Lớp và các thẻ tag (Trường, Chuyên ngành ô tô, Công ty VinFast, Địa chỉ Hải Phòng).
-   * **Liên kết mạng xã hội:** 4 nút liên kết tích hợp icon SVG chuẩn (Facebook, GitHub, Zalo với link trực tiếp, LinkedIn) có thuộc tính bảo mật `target="_blank" rel="noopener"`.
+   * **Ảnh đại diện (Avatar):** Ảnh chân dung cá nhân thật được nhúng bằng `<img src="image/IMG_5791.JPG" alt="Ảnh đại diện Nguyễn Trọng Khang" />`, đặt trong khung tròn có viền gradient phát sáng (`pulse-ring`), hỗ trợ click để phóng to (`role="button"`, `tabindex="0"`).
+   * **Thông tin tóm tắt:** Badge "🎓 Sinh viên PTIT", Họ tên lớn (`<h1>`), Mã sinh viên, Lớp và các thẻ tag (Trường, Chuyên ngành ô tô, Công ty VinFast, Địa chỉ Hải Phòng).
+   * **Liên kết mạng xã hội:** 4 nút liên kết tích hợp icon SVG chuẩn (Facebook, GitHub, Zalo với link thực tế `zalo.me/0365595529`, LinkedIn) có thuộc tính bảo mật `target="_blank" rel="noopener"`.
 
 4. **Khối Thông tin chi tiết (`<section id="personal-info">`):**
-   * Trình bày dưới dạng lưới gồm 9 trường thông tin bắt buộc theo đề bài:
-     1. Mã sinh viên: **K24DTCN062**
-     2. Họ và tên: **Nguyễn Trọng Khang**
-     3. Lớp: **D24TXCN02-K**
-     4. Trường: **Học viện Công nghệ Bưu chính Viễn thông (PTIT)**
-     5. Email: **khangnt.k24dtcn062@stu.ptit.edu.vn**
-     6. Số điện thoại: **0365 595 529**
-     7. Ngày sinh: **18/05/1995**
-     8. Giới tính: **Nam**
-     9. Địa chỉ: **Hồng Bàng, Hải Phòng**
+   * Trình bày dưới dạng lưới CSS Grid gồm đủ 9 trường thông tin theo yêu cầu đề bài:
+
+     | # | Trường | Giá trị |
+     |:---:|:---|:---|
+     | 1 | Mã sinh viên | K24DTCN062 |
+     | 2 | Họ và tên | Nguyễn Trọng Khang |
+     | 3 | Lớp | D24TXCN02-K |
+     | 4 | Trường | Học viện Công nghệ Bưu chính Viễn thông (PTIT) |
+     | 5 | Email | khangnt.k24dtcn062@stu.ptit.edu.vn |
+     | 6 | Số điện thoại | 0365 595 529 |
+     | 7 | Ngày sinh | 18/05/1995 |
+     | 8 | Giới tính | Nam |
+     | 9 | Địa chỉ | Hồng Bàng, Hải Phòng |
 
 5. **Khối Công việc hiện tại (`<section id="work">`):**
-   * Vị trí: **Kỹ thuật viên Sửa chữa Ô tô** tại **VinFast Auto**.
-   * Mô tả công việc chuyên môn: Kiểm tra, chẩn đoán hệ thống cơ – điện tử xe điện, bảo dưỡng, xử lý phần cứng, phần mềm nhúng và nâng cấp pin, OBC, BMS theo chuẩn nhà sản xuất.
+   * **Vị trí:** Kỹ thuật viên Sửa chữa Ô tô
+   * **Cơ quan:** VinFast Auto
+   * **Mô tả:** Thực hiện kiểm tra, chẩn đoán và sửa chữa các hệ thống cơ – điện tử trên dòng xe điện VinFast. Tham gia quy trình bảo dưỡng định kỳ, xử lý lỗi phần cứng, phần mềm nhúng và hỗ trợ nâng cấp hệ thống pin, OBC và BMS theo tiêu chuẩn nhà sản xuất.
 
 6. **Khối Giới thiệu sở thích (`<section id="hobbies">`):**
-   * Nút bấm điều khiển ẩn/hiện danh sách: `<button id="hobbies-toggle">👇 Xem thêm</button>`.
-   * Danh sách 3 sở thích kèm icon minh họa trực quan:
-     * 🎵 **Nghe nhạc:** Thể loại EDM, Pop, nhạc Việt thư giãn sau giờ làm.
+   * Nút bấm điều khiển ẩn/hiện: `<button id="hobbies-toggle">👇 Xem thêm</button>`.
+   * Danh sách 3 sở thích kèm icon và mô tả:
+     * 🎵 **Nghe nhạc:** EDM, Pop, nhạc Việt – thư giãn sau giờ làm việc.
      * 🎬 **Xem phim:** Hành động, khoa học viễn tưởng và phim tài liệu công nghệ.
-     * 🎮 **Xem T1 (Esports):** Cổ vũ Faker và đội tuyển T1 tại các giải đấu LCK, Worlds.
+     * 🎮 **Xem T1 (Esports):** Fan trung thành Faker / T1 tại LCK, Worlds.
 
 7. **Khối Chân trang (`<footer>`):**
-   * Hiển thị thông tin bản quyền tự động cập nhật năm hệ thống (`<span id="copy-year"></span>`), họ tên sinh viên, thông điệp "Made with ❤️ for LTW – PTIT" và Mã sinh viên.
+   * Bản quyền tự động cập nhật năm (`<span id="copy-year"></span>`), họ tên sinh viên, thông điệp "Made with ❤️ for LTW – PTIT" và mã sinh viên K24DTCN062.
 
 8. **Cửa sổ Popup phóng to ảnh (`<div id="avatar-modal">`):**
-   * Đóng vai trò làm lớp phủ mờ (overlay) toàn màn hình khi người dùng click vào ảnh đại diện, có nút đóng `✕` (`#modal-close`).
+   * Lớp phủ mờ toàn màn hình khi click vào ảnh đại diện; hiển thị ảnh thật phóng to với nút đóng `✕` và hỗ trợ đóng bằng phím `Escape` hoặc click ra ngoài vùng ảnh.
 
 ---
 
 ### Bước 3: Thiết kế giao diện với CSS
 
-Giao diện được xây dựng hiện đại với phong cách **Dark Glassmorphism**, màu sắc hài hòa và hiệu ứng chuyển động mượt mà.
+Giao diện được xây dựng theo phong cách **Dark Glassmorphism** – nền tối sâu, hiệu ứng kính mờ, màu sắc hài hòa và chuyển động mượt mà.
 
 #### 3.1. Reset CSS và thiết lập biến toàn cục (CSS Variables)
-Sử dụng bộ chọn `*` để chuẩn hóa `box-sizing: border-box`, `margin: 0`, `padding: 0`. Bảng màu được kiểm soát chặt chẽ với tối đa 3 màu chủ đạo theo quy định:
+
+Chuẩn hóa `box-sizing`, `margin`, `padding` với bộ chọn `*`. Bảng màu kiểm soát chặt chẽ tối đa 3 màu chủ đạo:
+
 ```css
 :root {
-  --primary:   #6c63ff;     /* Tím hiện đại - Màu chủ đạo 1 */
-  --secondary: #f5a623;     /* Vàng cam nhấn - Màu chủ đạo 2 */
-  --accent:    #00d4aa;     /* Xanh ngọc phát sáng - Màu chủ đạo 3 */
-  --bg-dark:   #0d0e1a;     /* Nền tối sâu */
-  --bg-card:   rgba(255, 255, 255, 0.05); /* Hiệu ứng kính mờ Glassmorphism */
-  --border:    rgba(108, 99, 255, 0.25);
-  --shadow:    0 8px 32px rgba(108, 99, 255, 0.2);
-  --radius:    16px;
+  --primary:    #6c63ff;                    /* Tím hiện đại – màu chủ đạo 1   */
+  --secondary:  #f5a623;                    /* Vàng cam nhấn – màu chủ đạo 2  */
+  --accent:     #00d4aa;                    /* Xanh ngọc phát sáng – màu 3    */
+  --bg-dark:    #0d0e1a;                    /* Nền tối sâu                    */
+  --bg-card:    rgba(255, 255, 255, 0.05); /* Kính mờ Glassmorphism           */
+  --border:     rgba(108, 99, 255, 0.25);
+  --shadow:     0 8px 32px rgba(108, 99, 255, 0.2);
+  --radius:     16px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 ```
-Trang bị 2 quả cầu ánh sáng nền (`::before`, `::after` với `filter: blur(120px)`) chuyển động nhịp nhàng qua `@keyframes blob1` và `@keyframes blob2`.
+
+Hai quả cầu ánh sáng nền (`body::before`, `body::after`, `filter: blur(120px)`) chuyển động theo `@keyframes blob1` và `@keyframes blob2`.
 
 #### 3.2. Bố cục Header bằng Flexbox
-Thanh điều hướng được thiết lập cố định (`sticky`), sử dụng nền mờ trong suốt (`backdrop-filter: blur(20px)`) và bố cục Flexbox giúp căn đều hai đầu:
+
+Header cố định (`sticky`), nền mờ trong suốt (`backdrop-filter: blur(20px)`), căn đều hai đầu:
+
 ```css
 .header-inner {
   display: flex;
@@ -124,7 +138,9 @@ Thanh điều hướng được thiết lập cố định (`sticky`), sử dụ
 ```
 
 #### 3.3. Bố cục phần Profile và Lưới thông tin
-* **Khối Hero Profile:** Sử dụng Flexbox để dàn ngang ảnh đại diện bên trái và thông tin cá nhân bên phải:
+
+* **Hero Profile** – Flexbox dàn ngang ảnh đại diện và thông tin cá nhân:
+
   ```css
   .hero-card {
     display: flex;
@@ -137,7 +153,9 @@ Thanh điều hướng được thiết lập cố định (`sticky`), sử dụ
     padding: 40px;
   }
   ```
-* **Lưới thông tin cá nhân (Info Grid):** Sử dụng CSS Grid thông minh tự co giãn kích thước linh hoạt mà không bị vỡ layout:
+
+* **Info Grid** – CSS Grid tự co giãn không vỡ layout:
+
   ```css
   .info-grid {
     display: grid;
@@ -147,7 +165,9 @@ Thanh điều hướng được thiết lập cố định (`sticky`), sử dụ
   ```
 
 #### 3.4. Hiệu ứng Hover và Chuyển động
-* **Hiệu ứng vòng sáng ảnh đại diện (Pulse Glow Ring):**
+
+* **Vòng sáng avatar (Pulse Glow Ring):**
+
   ```css
   .avatar-ring {
     animation: pulse-ring 3s ease-in-out infinite;
@@ -158,34 +178,24 @@ Thanh điều hướng được thiết lập cố định (`sticky`), sử dụ
     box-shadow: 0 0 40px rgba(108, 99, 255, 0.6);
   }
   ```
-* **Hiệu ứng thẻ card & nút bấm:** Khi hover vào các thẻ thông tin, thẻ công việc hoặc nút mạng xã hội, các phần tử nổi lên trên theo phương Y (`transform: translateY(-4px)`), đổ bóng màu nổi bật và đổi màu viền sắc nét.
+
+* **Thẻ card & nút bấm:** Khi hover nổi lên (`transform: translateY(-4px)`), đổ bóng màu nổi bật, đổi màu viền sắc nét.
 
 #### 3.5. Responsive cho thiết bị di động (Media Queries)
-Đảm bảo trang web hiển thị tối ưu trên màn hình Tablet và Mobile:
+
 ```css
-/* Tablet & Màn hình vừa (< 768px) */
+/* Tablet & màn hình vừa (< 768px) */
 @media (max-width: 768px) {
-  .hero-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 28px 22px;
-  }
-  .social-links {
-    justify-content: center;
-  }
+  .hero-card    { flex-direction: column; text-align: center; padding: 28px 22px; }
+  .avatar-ring  { width: 140px; height: 140px; }
+  .social-links { justify-content: center; }
 }
 
 /* Smartphone (< 480px) */
 @media (max-width: 480px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-name {
-    font-size: 1.5rem;
-  }
-  .hobbies-list {
-    grid-template-columns: 1fr;
-  }
+  .info-grid    { grid-template-columns: 1fr; }
+  .hero-name    { font-size: 1.5rem; }
+  .hobbies-list { grid-template-columns: 1fr; }
 }
 ```
 
@@ -193,13 +203,13 @@ Thanh điều hướng được thiết lập cố định (`sticky`), sử dụ
 
 ### Bước 4: Xử lý tương tác với JavaScript
 
-Tệp `K24DTCN062_NGUYENTRONGKHANG.js` phụ trách xử lý toàn bộ logic tương tác người dùng theo đúng 100% yêu cầu đề bài:
+Tệp `K24DTCN062_NGUYENTRONGKHANG.js` xử lý toàn bộ logic tương tác theo đúng 100% yêu cầu đề bài:
 
 #### 4.1. Hiển thị thông báo chào mừng kèm ngày hệ thống
-Khi tài nguyên trang tải hoàn tất (sự kiện `load`), hàm lấy ngày, tháng, năm thực tế từ đối tượng `new Date()` và hiển thị hộp thoại alert:
+
 ```javascript
 window.addEventListener('load', () => {
-  const now = new Date();
+  const now  = new Date();
   const day  = String(now.getDate()).padStart(2, '0');
   const mon  = String(now.getMonth() + 1).padStart(2, '0');
   const year = now.getFullYear();
@@ -208,14 +218,14 @@ window.addEventListener('load', () => {
 ```
 
 #### 4.2. Đồng hồ số thời gian thực cập nhật mỗi giây
-Sử dụng `setInterval` lặp lại mỗi 1000ms, định dạng chuỗi 2 chữ số với `padStart(2, '0')` và gán vào phần tử `#clock`:
+
 ```javascript
 function updateClock() {
   const now = new Date();
-  const h = String(now.getHours()).padStart(2, '0');
-  const m = String(now.getMinutes()).padStart(2, '0');
-  const s = String(now.getSeconds()).padStart(2, '0');
-  const el = document.getElementById('clock');
+  const h   = String(now.getHours()).padStart(2, '0');
+  const m   = String(now.getMinutes()).padStart(2, '0');
+  const s   = String(now.getSeconds()).padStart(2, '0');
+  const el  = document.getElementById('clock');
   if (el) el.textContent = `🕐 ${h}:${m}:${s}`;
 }
 setInterval(updateClock, 1000);
@@ -223,7 +233,9 @@ updateClock();
 ```
 
 #### 4.3. Popup phóng to ảnh đại diện
-Xử lý mở modal khi click vào ảnh đại diện, đồng thời hỗ trợ đóng modal qua: nhấp nút `✕`, nhấp ra vùng nền ngoài (overlay backdrop) hoặc nhấn phím `Escape`:
+
+Hỗ trợ mở bằng click và bàn phím (`Enter`/`Space`); đóng bằng nút `✕`, click ra ngoài, hoặc phím `Escape`:
+
 ```javascript
 const avatarRing  = document.getElementById('avatarRing');
 const avatarModal = document.getElementById('avatar-modal');
@@ -232,7 +244,14 @@ const modalClose  = document.getElementById('modal-close');
 if (avatarRing) {
   avatarRing.addEventListener('click', () => {
     avatarModal.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Ngăn cuộn trang phía dưới
+    document.body.style.overflow = 'hidden';
+  });
+  avatarRing.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      avatarModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
   });
 }
 if (modalClose) modalClose.addEventListener('click', closeModal);
@@ -241,9 +260,7 @@ if (avatarModal) {
     if (e.target === avatarModal) closeModal();
   });
 }
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 function closeModal() {
   avatarModal.classList.remove('show');
   document.body.style.overflow = '';
@@ -251,7 +268,7 @@ function closeModal() {
 ```
 
 #### 4.4. Ẩn / hiện phần giới thiệu sở thích (Toggle Accordion)
-Khi nhấn nút, trạng thái `hobbiesOpen` được đảo ngược; class `.open` được bật/tắt kết hợp hiệu ứng CSS `max-height` và `opacity` để tạo hiệu ứng trượt mở mượt mà, đồng thời thay đổi văn bản nút giữa `"👇 Xem thêm"` và `"👆 Thu gọn"`:
+
 ```javascript
 const toggleBtn   = document.getElementById('hobbies-toggle');
 const hobbiesList = document.getElementById('hobbies-list');
@@ -272,7 +289,7 @@ if (toggleBtn) {
 ```
 
 #### 4.5. Tự động cập nhật năm bản quyền
-Tránh việc cố định năm tĩnh bằng cách tự động gán năm hiện tại thông qua `new Date().getFullYear()`:
+
 ```javascript
 const yearEl = document.getElementById('copy-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -282,17 +299,14 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 ### Bước 5: Kiểm thử và hoàn thiện
 
-1. **Kiểm thử đa thiết bị & Responsive:**
-   * Sử dụng Chrome DevTools mô phỏng trên các thiết bị: iPhone 12/14 Pro, Samsung Galaxy S20, iPad Air và Desktop màn hình rộng 1920x1080. Bố cục tự động điều chỉnh linh hoạt, không phát sinh lỗi tràn khung ngang (`overflow-x`).
+1. **Kiểm thử đa thiết bị & Responsive:** Mô phỏng trên Chrome DevTools với iPhone 12/14 Pro, Samsung Galaxy S20, iPad Air và Desktop 1920×1080. Bố cục tự động điều chỉnh linh hoạt, không phát sinh `overflow-x`.
 2. **Kiểm thử tương tác:**
-   * Xác thực thông báo chào mừng xuất hiện chính xác ngày hiện tại khi tải trang.
-   * Đồng hồ số nhảy nhịp nhàng từng giây.
-   * Modal ảnh phóng to hoạt động tốt và đóng mở dễ dàng trên mọi thiết bị.
-   * Nút "Xem thêm" / "Thu gọn" mở rộng và đóng danh sách mượt mà.
-3. **Kiểm tra tab Console (F12):**
-   * Kết quả: **0 errors, 0 warnings**. Không có lỗi JavaScript runtime hoặc tài nguyên 404.
-4. **Kiểm tra ngữ nghĩa và trợ năng:**
-   * Sử dụng đầy đủ các thuộc tính `aria-label`, `aria-expanded`, `role="button"`, cấu trúc thẻ tiêu đề `h1`, `h2` chuẩn SEO.
+   * Thông báo chào mừng hiển thị đúng ngày thực tế khi tải trang.
+   * Đồng hồ số cập nhật từng giây chính xác.
+   * Modal phóng to ảnh đại diện thật (`image/IMG_5791.JPG`) mở/đóng mượt mà trên mọi thiết bị.
+   * Nút "Xem thêm" / "Thu gọn" hoạt động đúng trạng thái với animation.
+3. **Kiểm tra Console (F12):** Kết quả **0 errors, 0 warnings** – không có lỗi JavaScript runtime hay tài nguyên 404.
+4. **Kiểm tra ngữ nghĩa & trợ năng (Accessibility):** Đầy đủ `aria-label`, `aria-expanded`, `role="button"`, cấu trúc `h1`/`h2` chuẩn SEO.
 
 ---
 
@@ -300,69 +314,82 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 ### 1. Hình ảnh minh họa kết quả kiểm thử
 
+> **Lưu ý:** Thay các `[Chèn ảnh...]` bằng ảnh chụp màn hình thực tế trước khi nộp bài.
+
 #### Hình 1: Giao diện trang web trên Desktop
-![Giao diện trang web trên Desktop](images/desktop_view.png)
-* **Mô tả:** Trang web hiển thị hoàn chỉnh với phong cách tối hiện đại. Header gồm Logo cá nhân "NK PTIT" và đồng hồ kỹ thuật số. Thẻ Hero giới thiệu nổi bật ảnh đại diện và các liên kết mạng xã hội. Lưới thông tin cá nhân và thẻ công việc hiện tại VinFast được sắp xếp ngay ngắn.
+
+[Chèn ảnh chụp màn hình giao diện trang web ở chế độ desktop tại đây]
+
+* **Mô tả:** Trang web hiển thị hoàn chỉnh với phong cách tối hiện đại. Header gồm Logo cá nhân "NK PTIT" và đồng hồ kỹ thuật số thời gian thực. Thẻ Hero nổi bật với ảnh đại diện thật của sinh viên Nguyễn Trọng Khang (ảnh `IMG_5791.JPG`) và 4 nút liên kết mạng xã hội. Lưới thông tin cá nhân 9 trường và thẻ công việc VinFast được sắp xếp ngay ngắn.
 
 ---
 
 #### Hình 2: Giao diện trang web trên Mobile (Responsive)
-![Giao diện trang web trên Mobile](images/mobile_view.png)
+
+[Chèn ảnh chụp màn hình giao diện trang web ở chế độ mobile tại đây]
+
 * **Mô tả:** Khi xem trên màn hình điện thoại (độ rộng dưới 768px), giao diện tự động xếp dọc (column layout), ảnh đại diện căn giữa, các khối thông tin cá nhân tự co thành 1 cột giúp người dùng thao tác vuốt cuộn dễ dàng.
 
 ---
 
 #### Hình 3: Chức năng Popup phóng to ảnh đại diện
-![Chức năng Popup phóng to ảnh đại diện](images/popup_avatar.png)
-* **Mô tả:** Khi nhấp chuột vào ảnh đại diện, nền trang mờ đi và cửa sổ modal phóng to ảnh xuất hiện ở trung tâm màn hình cùng nút đóng (✕) ở góc trên bên phải.
+
+[Chèn ảnh chụp màn hình khi click vào ảnh đại diện tại đây]
+
+* **Mô tả:** Khi nhấp chuột vào ảnh đại diện, nền trang mờ đi và cửa sổ modal phóng to ảnh thật của sinh viên xuất hiện ở trung tâm màn hình cùng nút đóng (✕) ở góc trên bên phải. Hỗ trợ đóng bằng phím `Escape` và click ra ngoài vùng ảnh.
 
 ---
 
 #### Hình 4: Chức năng ẩn/hiện sở thích
-![Chức năng ẩn hiện sở thích](images/hobbies_toggle.png)
+
+[Chèn ảnh chụp màn hình khi bấm nút "Xem thêm" tại đây]
+
 * **Mô tả:** Trạng thái ban đầu danh sách sở thích được ẩn gọn. Khi bấm nút "Xem thêm", danh sách 3 sở thích xổ xuống kèm hiệu ứng mượt mà và nút tự đổi thành "Thu gọn".
 
 ---
 
 #### Hình 5: Thông báo chào mừng khi tải trang
-![Thông báo chào mừng khi tải trang](images/welcome_alert.png)
-* **Mô tả:** Hộp thoại thông báo chào mừng (alert) xuất hiện ngay khi trang web tải xong, thể hiện rõ ngày hệ thống và lời chào mừng đích danh sinh viên Nguyễn Trọng Khang.
+
+[Chèn ảnh chụp màn hình alert chào mừng tại đây]
+
+* **Mô tả:** Hộp thoại thông báo chào mừng (alert) xuất hiện ngay khi trang web tải xong, hiển thị ngày hệ thống thực tế và lời chào mừng đích danh sinh viên Nguyễn Trọng Khang.
 
 ---
 
 #### Hình 6: Kiểm tra lỗi trên Console (F12)
-![Kiểm tra Console F12](images/console_clean.png)
-* **Mô tả:** Tab Console trong bộ công cụ kiểm thử DevTools hoàn toàn sạch sẽ, không có bất kỳ thông báo lỗi hoặc cảnh báo nào.
+
+[Chèn ảnh chụp màn hình tab Console không có lỗi tại đây]
+
+* **Mô tả:** Tab Console trong DevTools hoàn toàn sạch sẽ, không có bất kỳ thông báo lỗi hoặc cảnh báo nào, chứng tỏ mã JavaScript chạy ổn định.
 
 ---
 
 ### 2. Bảng tổng hợp kết quả đạt được
 
-Đối chiếu với các tiêu chí trong đề bài bài tập thực hành cá nhân:
-
 | STT | Yêu cầu theo đề bài | Chi tiết triển khai | Trạng thái |
 | :---: | :--- | :--- | :---: |
-| 1 | Logo, ảnh đại diện, thông tin cá nhân đầy đủ | Logo NK PTIT cách điệu, avatar có hiệu ứng phát sáng, 9 mục thông tin cá nhân chuẩn xác | **Hoàn thành** |
-| 2 | Giới thiệu công việc hiện tại | Kỹ thuật viên Sửa chữa Ô tô tại VinFast Auto, mô tả công việc cơ - điện tử rõ ràng | **Hoàn thành** |
-| 3 | Giới thiệu sở thích | 3 sở thích: Nghe nhạc, Xem phim, Xem T1 Esports kèm icon và mô tả | **Hoàn thành** |
-| 4 | Liên kết mạng xã hội | Đầy đủ 4 nút mạng xã hội: Facebook, GitHub, Zalo (kèm SĐT thực tế), LinkedIn | **Hoàn thành** |
-| 5 | Footer bản quyền | Thông tin tác giả, sinh viên PTIT, mã SV và năm bản quyền tự động cập nhật | **Hoàn thành** |
-| 6 | CSS Flexbox / Grid, Responsive | Flexbox cho header & hero; Grid cho thông tin & sở thích; Responsive 768px & 480px | **Hoàn thành** |
-| 7 | Hiệu ứng hover, transition, animation | Đầy đủ hover card nổi lên, vòng xoay phát sáng avatar, blob chuyển động nền | **Hoàn thành** |
-| 8 | JavaScript chào mừng + ngày hệ thống | Alert xuất hiện khi trang nạp xong, hiển thị đúng ngày/tháng/năm thực tế | **Hoàn thành** |
-| 9 | JavaScript popup ảnh | Click vào avatar mở modal phóng to, đóng bằng nút ✕, click ngoài hoặc phím ESC | **Hoàn thành** |
-| 10 | JavaScript ẩn/hiện sở thích | Nút bấm chuyển đổi linh hoạt trạng thái "Xem thêm" / "Thu gọn" với animation CSS | **Hoàn thành** |
-| 11 | JavaScript đồng hồ số | Đồng hồ kỹ thuật số ở header cập nhật chính xác theo từng giây | **Hoàn thành** |
+| 1 | Logo, ảnh đại diện, thông tin cá nhân đầy đủ | Logo NK PTIT cách điệu; ảnh đại diện thật `IMG_5791.JPG` có viền phát sáng; đủ 9 trường thông tin cá nhân | **Hoàn thành** |
+| 2 | Giới thiệu công việc hiện tại | Kỹ thuật viên Sửa chữa Ô tô – VinFast Auto; mô tả cơ – điện tử rõ ràng | **Hoàn thành** |
+| 3 | Giới thiệu sở thích | 3 sở thích: Nghe nhạc, Xem phim, Xem T1 Esports – kèm icon & mô tả | **Hoàn thành** |
+| 4 | Liên kết mạng xã hội | 4 nút: Facebook, GitHub, Zalo (`zalo.me/0365595529`), LinkedIn | **Hoàn thành** |
+| 5 | Footer bản quyền | Họ tên, mã SV, năm bản quyền tự động cập nhật qua JS | **Hoàn thành** |
+| 6 | CSS Flexbox / Grid, Responsive | Flexbox cho header & hero; Grid cho info & hobbies; Media queries 768px & 480px | **Hoàn thành** |
+| 7 | Hiệu ứng hover, transition, animation | Hover card nổi lên, vòng xoay phát sáng avatar, blob chuyển động nền | **Hoàn thành** |
+| 8 | JS chào mừng + ngày hệ thống | Alert hiển thị đúng ngày/tháng/năm thực tế khi tải trang | **Hoàn thành** |
+| 9 | JS popup ảnh | Click avatar → modal phóng to ảnh thật; đóng bằng ✕, click ngoài, phím ESC | **Hoàn thành** |
+| 10 | JS ẩn/hiện sở thích | Toggle "Xem thêm" / "Thu gọn" với animation CSS mượt mà | **Hoàn thành** |
+| 11 | JS đồng hồ số | Đồng hồ kỹ thuật số ở header cập nhật chính xác mỗi giây | **Hoàn thành** |
 
 ---
 
 ## III. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
 
-* **Kết luận:** Dự án đã vận dụng thành công và chuẩn hóa các kiến thức trọng tâm của học phần Lập trình Web: cấu trúc Semantic HTML5, kỹ thuật phân tầng giao diện với CSS Flexbox/Grid, tư duy phối màu theo chuẩn UI/UX, cũng như các thao tác xử lý sự kiện DOM tương tác của JavaScript thuần (Vanilla JS). Toàn bộ 11/11 yêu cầu kỹ thuật được hoàn thành trọn vẹn, không có lỗi runtime.
+* **Kết luận:** Dự án đã vận dụng thành công các kiến thức trọng tâm của học phần Lập trình Web: cấu trúc Semantic HTML5, kỹ thuật phân tầng giao diện với CSS Flexbox/Grid, tư duy phối màu theo chuẩn UI/UX, và xử lý sự kiện DOM với JavaScript thuần (Vanilla JS). Ảnh đại diện cá nhân thực tế (`image/IMG_5791.JPG`) được tích hợp đầy đủ vào khung avatar phát sáng, popup phóng to và favicon tab trình duyệt. **Toàn bộ 11/11 yêu cầu kỹ thuật hoàn thành, không có lỗi runtime.**
+
 * **Hướng phát triển:**
-  * Bổ sung tính năng chuyển đổi giao diện Sáng / Tối (Light / Dark Theme Toggle) lưu trữ tùy chọn người dùng qua `localStorage`.
-  * Tích hợp biểu mẫu liên hệ tương tác (Contact Form) có xác thực dữ liệu đầu vào (Validation) bằng JavaScript.
-  * Tối ưu hóa điểm số hiệu năng (Lighthouse score) lên mức tuyệt đối (100/100).
+  * Thêm tính năng chuyển đổi Sáng / Tối (Light / Dark Theme Toggle) lưu trữ qua `localStorage`.
+  * Tích hợp biểu mẫu liên hệ (Contact Form) có xác thực dữ liệu đầu vào bằng JavaScript.
+  * Tối ưu hóa Lighthouse score lên 100/100.
 
 ---
 
