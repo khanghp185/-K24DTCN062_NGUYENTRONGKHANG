@@ -356,9 +356,9 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 #### Hình 6: Kiểm tra lỗi trên Console (F12)
 
-[Chèn ảnh chụp màn hình tab Console không có lỗi tại đây]
+![Kiểm tra lỗi trên Console](image/console_clean.jpg)
 
-* **Mô tả:** Tab Console trong DevTools hoàn toàn sạch sẽ, không có bất kỳ thông báo lỗi hoặc cảnh báo nào, chứng tỏ mã JavaScript chạy ổn định.
+* **Mô tả:** Mở công cụ DevTools (F12) tại tab Console khi chạy trang web trên trình duyệt. Mã nguồn JavaScript của trang web (`K24DTCN062_NGUYENTRONGKHANG.js`) hoạt động hoàn toàn trơn tru, nạp đầy đủ các chức năng tương tác (đồng hồ số, avatar popup, thông báo chào mừng, toggle sở thích) mà không phát sinh bất kỳ lỗi cú pháp hay ngoại lệ runtime nào từ trang web.
 
 ---
 
@@ -366,7 +366,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 | STT | Yêu cầu theo đề bài | Chi tiết triển khai | Trạng thái |
 | :---: | :--- | :--- | :---: |
-| 1 | Logo, ảnh đại diện, thông tin cá nhân đầy đủ | Logo NK PTIT cách điệu; ảnh đại diện thật `IMG_5791.JPG` có viền phát sáng; đủ 9 trường thông tin cá nhân | **Hoàn thành** |
+| 1 | Logo, ảnh đại diện, thông tin cá nhân đầy đủ | Logo NK PTIT cách điệu; ảnh đại diện thật `IMG_5791.JPG` có viền phát sáng; đủ 9 trường thông tin cá nhân; phông chữ Amazon Ember Modern | **Hoàn thành** |
 | 2 | Giới thiệu công việc hiện tại | Kỹ thuật viên Sửa chữa Ô tô – VinFast Auto; mô tả cơ – điện tử rõ ràng | **Hoàn thành** |
 | 3 | Giới thiệu sở thích | 3 sở thích: Nghe nhạc, Xem phim, Xem T1 Esports – kèm icon & mô tả | **Hoàn thành** |
 | 4 | Liên kết mạng xã hội | 4 nút: Facebook, GitHub, Zalo (`zalo.me/0365595529`), LinkedIn | **Hoàn thành** |
@@ -382,12 +382,12 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 ## III. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
 
-* **Kết luận:** Dự án đã vận dụng thành công các kiến thức trọng tâm của học phần Lập trình Web: cấu trúc Semantic HTML5, kỹ thuật phân tầng giao diện với CSS Flexbox/Grid, tư duy phối màu theo chuẩn UI/UX, và xử lý sự kiện DOM với JavaScript thuần (Vanilla JS). Ảnh đại diện cá nhân thực tế (`image/IMG_5791.JPG`) được tích hợp đầy đủ vào khung avatar phát sáng, popup phóng to và favicon tab trình duyệt. **Toàn bộ 11/11 yêu cầu kỹ thuật hoàn thành, không có lỗi runtime.**
+* **Kết luận:** Dự án đã vận dụng thành công các kiến thức trọng tâm của học phần Lập trình Web: cấu trúc chuẩn Semantic HTML5, kỹ thuật phân tầng giao diện với CSS Flexbox/Grid, tư duy phối màu theo chuẩn UI/UX, phông chữ thương hiệu hiện đại **Amazon Ember / Amazon Ember Modern**, và xử lý sự kiện tương tác DOM với JavaScript thuần (Vanilla JS). Ảnh đại diện cá nhân thực tế (`image/IMG_5791.JPG`) được tích hợp trọn vẹn vào khung avatar phát sáng, popup phóng to và favicon tab trình duyệt. Toàn bộ 6/6 hình ảnh minh chứng kiểm thử thực tế đã được đối soát và chèn vào báo cáo. **Dự án hoàn thành đầy đủ 11/11 tiêu chí kỹ thuật theo yêu cầu đề bài.**
 
 * **Hướng phát triển:**
-  * Thêm tính năng chuyển đổi Sáng / Tối (Light / Dark Theme Toggle) lưu trữ qua `localStorage`.
-  * Tích hợp biểu mẫu liên hệ (Contact Form) có xác thực dữ liệu đầu vào bằng JavaScript.
-  * Tối ưu hóa Lighthouse score lên 100/100.
+  * Bổ sung tính năng chuyển đổi Sáng / Tối (Light / Dark Theme Toggle) lưu trữ tùy chọn người dùng qua `localStorage`.
+  * Tích hợp biểu mẫu liên hệ tương tác (Contact Form) có xác thực dữ liệu đầu vào (Validation) bằng JavaScript.
+  * Tối ưu hóa điểm số hiệu năng Google Lighthouse đạt mức tuyệt đối (100/100).
 
 ---
 
