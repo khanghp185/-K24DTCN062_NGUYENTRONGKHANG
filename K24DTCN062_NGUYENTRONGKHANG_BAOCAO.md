@@ -52,7 +52,7 @@ Trang web được tổ chức theo chuẩn **HTML5 Semantic**, chia rõ ràng t
 1. **Thẻ `<head>`:**
    * Khai báo chuẩn ký tự UTF-8, cấu hình thẻ viewport cho thiết kế Responsive.
    * Thẻ `<title>` (`Nguyễn Trọng Khang | K24DTCN062 – PTIT`) và `<meta name="description">` thể hiện thông tin sinh viên và trường.
-   * Liên kết tệp CSS độc lập và font chữ Google Fonts (*Inter*, *Outfit*).
+   * Liên kết tệp CSS độc lập và font chữ hiện đại **Amazon Ember / Amazon Ember Modern** (`https://fonts.cdnfonts.com/css/amazon-ember`).
    * Favicon tab trình duyệt sử dụng ảnh đại diện thực tế: `<link rel="icon" type="image/jpeg" href="image/IMG_5791.JPG" />`.
 
 2. **Khối Header (`<header>`):**
@@ -314,11 +314,9 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 ### 1. Hình ảnh minh họa kết quả kiểm thử
 
-> **Lưu ý:** Thay các `[Chèn ảnh...]` bằng ảnh chụp màn hình thực tế trước khi nộp bài.
-
 #### Hình 1: Giao diện trang web trên Desktop
 
-[Chèn ảnh chụp màn hình giao diện trang web ở chế độ desktop tại đây]
+![Giao diện trang web trên Desktop](image/desktop_view.jpg)
 
 * **Mô tả:** Trang web hiển thị hoàn chỉnh với phong cách tối hiện đại. Header gồm Logo cá nhân "NK PTIT" và đồng hồ kỹ thuật số thời gian thực. Thẻ Hero nổi bật với ảnh đại diện thật của sinh viên Nguyễn Trọng Khang (ảnh `IMG_5791.JPG`) và 4 nút liên kết mạng xã hội. Lưới thông tin cá nhân 9 trường và thẻ công việc VinFast được sắp xếp ngay ngắn.
 
@@ -326,7 +324,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 #### Hình 2: Giao diện trang web trên Mobile (Responsive)
 
-[Chèn ảnh chụp màn hình giao diện trang web ở chế độ mobile tại đây]
+![Giao diện trang web trên Mobile](image/mobile_view.jpg)
 
 * **Mô tả:** Khi xem trên màn hình điện thoại (độ rộng dưới 768px), giao diện tự động xếp dọc (column layout), ảnh đại diện căn giữa, các khối thông tin cá nhân tự co thành 1 cột giúp người dùng thao tác vuốt cuộn dễ dàng.
 
@@ -334,7 +332,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 #### Hình 3: Chức năng Popup phóng to ảnh đại diện
 
-[Chèn ảnh chụp màn hình khi click vào ảnh đại diện tại đây]
+![Chức năng Popup phóng to ảnh đại diện](image/popup_avatar.jpg)
 
 * **Mô tả:** Khi nhấp chuột vào ảnh đại diện, nền trang mờ đi và cửa sổ modal phóng to ảnh thật của sinh viên xuất hiện ở trung tâm màn hình cùng nút đóng (✕) ở góc trên bên phải. Hỗ trợ đóng bằng phím `Escape` và click ra ngoài vùng ảnh.
 
@@ -342,7 +340,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 #### Hình 4: Chức năng ẩn/hiện sở thích
 
-[Chèn ảnh chụp màn hình khi bấm nút "Xem thêm" tại đây]
+![Chức năng ẩn/hiện sở thích](image/hobbies_toggle.png)
 
 * **Mô tả:** Trạng thái ban đầu danh sách sở thích được ẩn gọn. Khi bấm nút "Xem thêm", danh sách 3 sở thích xổ xuống kèm hiệu ứng mượt mà và nút tự đổi thành "Thu gọn".
 
@@ -350,7 +348,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 #### Hình 5: Thông báo chào mừng khi tải trang
 
-[Chèn ảnh chụp màn hình alert chào mừng tại đây]
+![Thông báo chào mừng khi tải trang](image/welcome_alert.jpg)
 
 * **Mô tả:** Hộp thoại thông báo chào mừng (alert) xuất hiện ngay khi trang web tải xong, hiển thị ngày hệ thống thực tế và lời chào mừng đích danh sinh viên Nguyễn Trọng Khang.
 

@@ -1,4 +1,5 @@
-/* ===== GOOGLE FONTS ===== */
+/* ===== FONTS ===== */
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap');
 
 /* ===== CSS RESET & VARIABLES ===== */
@@ -27,7 +28,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   background: var(--bg-dark);
   color: var(--text-main);
   line-height: 1.7;
@@ -97,7 +98,7 @@ header {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   font-weight: 800;
   font-size: 1.3rem;
   color: #fff;
@@ -109,7 +110,7 @@ header {
   box-shadow: 0 8px 25px rgba(108,99,255,0.6);
 }
 .logo-text {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--text-main);
@@ -118,7 +119,7 @@ header {
 
 /* Digital Clock */
 #clock {
-  font-family: 'Outfit', monospace;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', monospace;
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
@@ -212,7 +213,7 @@ header {
   text-transform: uppercase;
 }
 .hero-name {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   font-size: 2.4rem;
   font-weight: 800;
   line-height: 1.2;
@@ -268,7 +269,7 @@ section { padding: 30px 0; animation: fadeInUp 0.7s ease both; }
 
 .section-title {
   display: flex; align-items: center; gap: 12px;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 22px;
@@ -344,7 +345,7 @@ section { padding: 30px 0; animation: fadeInUp 0.7s ease both; }
   box-shadow: 0 4px 15px rgba(0,166,224,0.3);
 }
 .job-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
@@ -374,7 +375,7 @@ section { padding: 30px 0; animation: fadeInUp 0.7s ease both; }
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Amazon Ember', 'Amazon Ember Modern', sans-serif;
   margin-bottom: 18px;
   transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
   box-shadow: 0 4px 15px rgba(108,99,255,0.35);
